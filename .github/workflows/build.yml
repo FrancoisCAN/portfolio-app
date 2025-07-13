@@ -1,0 +1,23 @@
+name: Build, lint and test the application
+run-name: Build, lint and test by @${{ github.actor }}
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Activate pnpm via corepack
+        run: corepack enable pnpm
+
+      - name: Install packages
+        run: pnpm install
+
+      - name: Run ESLint
+        run: pnpm run lint

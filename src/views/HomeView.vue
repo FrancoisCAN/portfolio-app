@@ -5,6 +5,7 @@
     <div class="inline-grid *:[grid-area:1/1]">
       <div class="status status-error animate-ping"></div>
       <div class="status status-error"></div>
-    </div> Server is down
+    </div>
+    Server is down
   </main>
 </template>
