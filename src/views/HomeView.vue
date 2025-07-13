@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <main>
-    <TheWelcome />
+  <main class="home-view">
+    <div class="inline-grid *:[grid-area:1/1]">
+      <div class="status status-error animate-ping"></div>
+      <div class="status status-error"></div>
+    </div> Server is down
   </main>
 </template>
