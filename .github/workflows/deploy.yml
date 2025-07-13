@@ -1,0 +1,41 @@
+name: Deploy to Scaleway Container Registry
+run-name: Deploy to SCR by @${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  VERSION: latest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Setup stage
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Activate pnpm via corepack
+        run: corepack enable pnpm
+
+      - name: Install packages
+        run: pnpm install
+
+      # Login build and push
+      # See https://www.scaleway.com/en/docs/tutorials/use-container-registry-github-actions/
+      - name: Login to Scaleway Container Registry
+        uses: docker/login-action@v3
+        with:
+          username: nologin
+          password: ${{ secrets.SCALEWAY_API_KEY }}
+          registry: ${{ secrets.SCALEWAY_CONTAINER_REGISTRY_ENDPOINT }}
+
+      # Build stage
+      - name: Build the Docker image
+        run: docker build -f docker/production/Dockerfile . -t ${{ secrets.SCALEWAY_CONTAINER_REGISTRY_ENDPOINT }}/${{ github.event.repository.name }}:$VERSION
+
+      # Push stage
+      - name: Push the Docker image
+        run: docker push ${{ secrets.SCALEWAY_CONTAINER_REGISTRY_ENDPOINT }}/${{ github.event.repository.name }}:$VERSION
