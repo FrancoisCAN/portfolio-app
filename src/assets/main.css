@@ -1,9 +1,33 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Yellowtail&display=swap');
+
+/* Tailwind and DaisyUI themes */
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: silk --default, business;
+}
+
+/* Main theme */
+html {
+  height: 100vh;
+}
+
+body {
+  height: inherit;
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   font-weight: normal;
+  height: inherit;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.font-secondary {
+  font-family: "Yellowtail", cursive;
+  font-style: normal;
+  font-weight: 400;
 }
