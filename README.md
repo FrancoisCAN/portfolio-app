@@ -1,45 +1,37 @@
-# ./
+# [Éducatif] Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+## 📌 Objectifs pédagogiques
 
-## Recommended IDE Setup
+Ce projet a pour but principal de créer une base professionnelle pour présenter mes projets et mon profil de développeur full stack JavaScript mais aussi de renforcer certaines de mes compétences:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Renforcer l’utilisation de **Vue 3** avec **TypeScript**.
+- Mettre en œuvre une interface **mobile-first**.
+- Maîtriser l’authentification, la gestion des données et le déploiement avec **Firebase** et **Docker**.
+- Contrôler les potentiels régressions avec des **tests frontend** (unitaires).
+- Travailler sur **l’accessibilité** (a11y) et les **performances web**.
 
-## Type Support for `.vue` Imports in TS
+## 📑 Contexte et description du projet
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Titre: Portfolio & CV interactif.
 
-## Customize configuration
+Résumé: Un site personnel qui résumé mon profil, la partie IT de mon parcours, mes compétences et mes projets. Il servira de carte de visite numérique pour les recruteurs ou futurs collaborateurs.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Utilité ou intérêt: Valoriser mes compétences, offrir un point d’entrée pour mon réseau ou les visiteurs quelconques.
 
-## Project Setup
+## 🧰 Stack technique
 
-```sh
-pnpm install
-```
+- Prototyping: Figma.
+- Framework: Vue 3, TypeScript, TailwindCSS.
+- Base de données et authentification: Firebase.
+- Tests: Vitest.
+- Déploiement: Docker, Scaleway, CI/CD GitHub Actions.
+- Qualité de code: ESLint, Prettier, Lighthouse.
 
-### Compile and Hot-Reload for Development
+## 🎯 Fonctionnalités clés
 
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+- Section “À propos” (bio, stack IT et soft skills).
+- Sections “Autres projets”.
+- Section “Télécharger mon CV”.
+- Section “Contact” (vers Firebase uniquement).
+- Mode sombre / clair.
+- Entièrement responsive (mobile first).
